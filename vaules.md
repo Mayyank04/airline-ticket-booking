@@ -1,6 +1,6 @@
 # ✈️ FLIGHT BOOKING DATABASE – SAMPLE DATA
 
-## 06. Insert into Passenger Table
+## 01. Insert into Passenger Table
 
 ### Query
 ~~~sql
@@ -21,7 +21,7 @@ INSERT INTO Passenger VALUES
 
 ---
 
-## 07. Insert into Flight Table
+## 02 Insert into Flight Table
 
 ### Query
 ~~~sql
@@ -40,7 +40,7 @@ INSERT INTO Flight VALUES
 
 ---
 
-## 08. Insert into Booking Table
+## 03 Insert into Booking Table
 
 ### Query
 ~~~sql
@@ -61,7 +61,7 @@ INSERT INTO Booking VALUES
 
 ---
 
-## 09. Insert into Payment Mode Table
+## 04 Insert into Payment Mode Table
 
 ### Query
 ~~~sql
@@ -74,7 +74,7 @@ INSERT INTO Payment_Mode VALUES
 
 ---
 
-## 10. Insert into Payment Table
+## 05 Insert into Payment Table
 
 ### Query
 ~~~sql
