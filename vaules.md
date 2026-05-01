@@ -1,53 +1,96 @@
--- 1. Airport
-INSERT INTO Airport (AirportName, City, Country, IATACode) VALUES
-('Indira Gandhi International Airport', 'Delhi', 'India', 'DEL'),
-('Chhatrapati Shivaji Maharaj International Airport', 'Mumbai', 'India', 'BOM'),
-('Kempegowda International Airport', 'Bangalore', 'India', 'BLR');
+# ✈️ FLIGHT BOOKING DATABASE – SAMPLE DATA
 
--- 2. Aircraft
-INSERT INTO Aircraft (Model, Capacity) VALUES
-('Airbus A320', 180),
-('Boeing 737', 160);
+## 06. Insert into Passenger Table
 
--- 3. Staff
-INSERT INTO Staff (Name, Role, Phone) VALUES
-('Amit Verma', 'Manager', '9000000001'),
-('Neha Singh', 'Supervisor', '9000000002');
+### Query
+~~~sql
+INSERT INTO Passenger VALUES
+(1, 'Aman', 21, 'Male'),
+(2, 'Riya', 22, 'Female'),
+(3, 'Rahul', 25, 'Male'),
+(4, 'Sneha', 23, 'Female'),
+(5, 'Arjun', 28, 'Male'),
+(6, 'Pooja', 24, 'Female'),
+(7, 'Karan', 27, 'Male'),
+(8, 'Neha', 26, 'Female'),
+(9, 'Vikas', 30, 'Male'),
+(10, 'Anjali', 22, 'Female'),
+(11, 'Rohit', 29, 'Male'),
+(12, 'Meena', 31, 'Female');
+~~~
 
--- 4. Flight
-INSERT INTO Flight (FlightNumber, SourceAirportID, DestinationAirportID, AircraftID, Duration) VALUES
-('AI101', 1, 2, 1, 120),  -- Delhi to Mumbai
-('AI202', 2, 3, 2, 105);  -- Mumbai to Bangalore
+---
 
--- 5. Flight_Schedule
-INSERT INTO Flight_Schedule (FlightID, DepartureDateTime, ArrivalDateTime, Status, StaffID) VALUES
-(1, '2026-03-01 09:00:00', '2026-03-01 11:00:00', 'Scheduled', 1),
-(2, '2026-03-01 14:00:00', '2026-03-01 15:45:00', 'Scheduled', 2);
+## 07. Insert into Flight Table
 
--- 6. Seat
-INSERT INTO Seat (AircraftID, SeatNumber, Class) VALUES
-(1, '1A', 'Business'),
-(1, '1B', 'Business'),
-(1, '10A', 'Economy'),
-(2, '1A', 'Business'),
-(2, '12C', 'Economy');
+### Query
+~~~sql
+INSERT INTO Flight VALUES
+(101, 'Indigo101', 'Delhi', 'Mumbai'),
+(102, 'AirIndia202', 'Delhi', 'Bangalore'),
+(103, 'SpiceJet303', 'Mumbai', 'Chennai'),
+(104, 'Vistara404', 'Delhi', 'Kolkata'),
+(105, 'Indigo505', 'Chennai', 'Delhi'),
+(106, 'AirIndia606', 'Bangalore', 'Mumbai'),
+(107, 'SpiceJet707', 'Kolkata', 'Delhi'),
+(108, 'Vistara808', 'Mumbai', 'Goa'),
+(109, 'Indigo909', 'Goa', 'Delhi'),
+(110, 'AirIndia111', 'Delhi', 'Hyderabad');
+~~~
 
--- 7. Customer
-INSERT INTO Customer (FirstName, LastName, Email, Phone, PassportNumber) VALUES
-('Rahul', 'Sharma', 'rahul@gmail.com', '9999999999', 'P1234567'),
-('Priya', 'Verma', 'priya@gmail.com', '8888888888', 'P7654321');
+---
 
--- 8. Booking
-INSERT INTO Booking (CustomerID, BookingDate, Status) VALUES
-(1, '2026-02-20', 'Confirmed'),
-(2, '2026-02-21', 'Pending');
+## 08. Insert into Booking Table
 
--- 9. Ticket
-INSERT INTO Ticket (BookingID, ScheduleID, SeatID, Price) VALUES
-(1, 1, 1, 5500.00),  -- Rahul booked seat 1A on schedule 1
-(2, 2, 4, 4800.00);  -- Priya booked seat 1A on schedule 2
+### Query
+~~~sql
+INSERT INTO Booking VALUES
+(1001, 1, 101, '2026-04-01'),
+(1002, 2, 102, '2026-04-02'),
+(1003, 3, 103, '2026-04-03'),
+(1004, 4, 104, '2026-04-04'),
+(1005, 5, 105, '2026-04-05'),
+(1006, 6, 106, '2026-04-06'),
+(1007, 7, 107, '2026-04-07'),
+(1008, 8, 108, '2026-04-08'),
+(1009, 9, 109, '2026-04-09'),
+(1010, 10, 110, '2026-04-10'),
+(1011, 11, 101, '2026-04-11'),
+(1012, 12, 102, '2026-04-12');
+~~~
 
--- 10. Payment
-INSERT INTO Payment (BookingID, PaymentDate, Amount, Method, Status) VALUES
-(1, '2026-02-20 10:30:00', 5500.00, 'Card', 'Success'),
-(2, '2026-02-21 11:00:00', 4800.00, 'UPI', 'Pending');
+---
+
+## 09. Insert into Payment Mode Table
+
+### Query
+~~~sql
+INSERT INTO Payment_Mode VALUES
+(1, 'UPI'),
+(2, 'Card'),
+(3, 'Net Banking'),
+(4, 'Cash');
+~~~
+
+---
+
+## 10. Insert into Payment Table
+
+### Query
+~~~sql
+INSERT INTO Payment VALUES
+(5001, 1001, 4500.00, 1),
+(5002, 1002, 6500.00, 2),
+(5003, 1003, 5000.00, 3),
+(5004, 1004, 4800.00, 1),
+(5005, 1005, 7000.00, 2),
+(5006, 1006, 5500.00, 4),
+(5007, 1007, 6200.00, 3),
+(5008, 1008, 4300.00, 1),
+(5009, 1009, 3900.00, 2),
+(5010, 1010, 7200.00, 3),
+(5011, 1011, 4600.00, 1),
+(5012, 1012, 6800.00, 2);
+~~~
+
+---
